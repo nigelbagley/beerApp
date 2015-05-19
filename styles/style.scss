@@ -1,0 +1,205 @@
+@import 'fonts';
+
+@include importfont('Gentium', 'fonts/genr102-webfont');
+
+body{
+	// background: url('../assets/CraftBackground.jpg');
+	// height: 100vh;
+	// background-attachment: fixed;
+	// background-size: cover;
+	font-family: 'Open Sans', sans-serif;
+}
+// font-family: 'Cabin', sans-serif;
+h1{
+	// font-family: 'Open Sans Condensed', sans-serif;
+	// font-weight: 700;
+	// text-transform: uppercase;
+	font-family: 'Gentium';
+	color: #1B100D;
+	border-left: 1px solid #000000;
+	padding-left: 12px;
+	 @media screen and (max-width:460px){
+	  	// width: 68%; 	
+	  }
+}
+
+h2{
+	font-family: 'Bree Serif', serif;
+	margin-bottom: 17px;
+}
+
+h3{
+	  margin: 0;
+}
+
+p{
+	// font-size: 20px;
+}
+.wrapper{
+	max-width: 800px;
+	margin:0 auto;
+}
+
+.splash{
+	background: url('../assets/beerBackground.jpg');
+	height: 100vh;
+	background-attachment: fixed;
+	// background-size: cover;
+	 @media screen and (max-width:460px){
+	  	background: none;
+	  }
+}
+.beers{
+	// position: fixed;
+	width: 800px;
+	  @media screen and (max-width:900px){
+	  	width: 100%; 	
+	  }
+	a{
+		padding: 10px;
+		border: 1px solid #000000;
+		text-decoration: none;
+		color: #000000;
+	}
+	h1{
+		@media screen and (max-width:460px){
+	  		margin-left: 5px; 	
+	  	}
+	}
+	p{
+			@media screen and (max-width:460px){
+		  		padding: 5px; 	
+		  	}
+	}
+}
+.ales{
+	  width: 50%;
+	  float: left;
+	  @media screen and (max-width:460px){
+	  	width: 100%; 	
+	  }
+	a{
+		padding: 10px;
+		// background: #FFFBB1;
+		border:1px solid #000000;
+		text-decoration: none;
+		color: #1B100D;
+		display: inline-block;
+		font-weight: 700;
+		margin-bottom: 6px;
+		// background: #F18E1C;
+		// font-family: 'Open Sans Condensed', sans-serif;
+		transition: all 1s;
+			&:hover{
+				background:#FFFBB1;
+			}
+	}
+
+}
+
+
+.lagers{
+	  margin-bottom: 19px;
+	  width: 50%;
+	  float: left;
+	  @media screen and (max-width:460px){
+	  	width: 100%; 	
+	  }
+	  a{
+	  	padding: 10px;
+	  	// background: #FFFBB1;
+	  	border:1px solid #000000;
+	  	text-decoration: none;
+	  	font-weight: 700;
+	  	color: #1B100D;
+	  	margin-bottom:6px;
+	  	// background: #F18E1C;
+	  	display: inline-block;
+	  	// font-family: 'Open Sans Condensed', sans-serif;
+	  	transition: all 1s;
+		  	&:hover{
+					background:#FFFBB1;
+				}
+	  }
+}
+
+.container{
+	clear: both;
+	position: relative;
+	top:25px;
+	height: 412px;
+	background: #fff;
+
+	h2{
+		// border-left: 1px solid #000000;
+		@media screen and (max-width:460px){
+	  		padding: 5px; 	
+	  	}
+
+	}
+	h3{
+			@media screen and (max-width:460px){
+		  		padding: 5px; 	
+		  	}
+	}
+	h4{
+			@media screen and (max-width:460px){
+		  		padding: 5px; 	
+		  	}
+	}
+
+	p{
+		font-size: 16px;
+			@media screen and (max-width:460px){
+		  		padding: 5px; 	
+		  	}
+	}
+}
+label{
+	text-transform: uppercase;
+	border: 1px solid black;
+	padding: 10px;
+	background:rgba(203, 89, 9, 1);
+}
+
+img{
+	float: left;
+	margin-right: 20px;
+	border:1px solid #000000;
+	// -webkit-filter: sepia(1);
+	//  filter: sepia(1);
+	@media screen and (max-width:460px){
+	  	width: 100%; 	
+	  }
+}
+
+hr{
+	border:1px dotted #000000;
+	clear: both;
+}
+// .section{
+// 	background: white;
+// 	position: relative;
+// 	top: -86px;
+// }
+
+.questionMark{
+	margin: 0 auto;
+	font-size: 316px;
+	text-align: center;
+	clear: both;
+}
+.footer{
+	text-align: center;
+	a{
+		text-decoration: none;
+		color: #000000;
+		&:hover{
+			color:#FFFBB1;
+		}
+	}
+	p{
+		font-size: 15px;
+		margin: 0;
+	}
+}
