@@ -8,19 +8,21 @@
 // q=query
 var beerApp = {};
 
-beerApp.getInfo = function(secondary,tertiary){
-	console.log(tertiary);
-	console.log(secondary);
+beerApp.getInfo = function(typeOfBeer){
+	console.log(typeOfBeer);
 	$.ajax({
 		url:'https://lcboapi.com/products',
-		headers: { 
-			'Authorization': 'Token MDoxZjFmZjRhYS1mYTQ2LTExZTQtODRkMy05M2UzOTFhZTAyODA6QVJ3NDZ6cmpTZkhtZ1RGQXZkSm1SYnV6bzc3a1VrRWhBenlU' 
-			},
-		dataType:'json',
+		dataType:'jsonp',
 		type:'GET',
 		data:{
-			q: 'beer ' + secondary + ' ' + tertiary,
-			per_page: '100'
+			// q: 'beer ' + typeOfBeer,
+			q:'beer+' + typeOfBeer,
+			per_page: '100',
+			// Live access key
+			// access_key: 'MDpkYmRkOGQ0YS0wZWI1LTExZTUtYTcxNC02ZjE4ODY5NjQ2Mzc6SEZkN2JhbmEwN3hnWVVuZXBPTkFLYkJJMFl0bG8xUFZqcGNj'
+
+			// local
+			access_key: 'MDoxZjFmZjRhYS1mYTQ2LTExZTQtODRkMy05M2UzOTFhZTAyODA6QVJ3NDZ6cmpTZkhtZ1RGQXZkSm1SYnV6bzc3a1VrRWhBenlU'
 		},
 		success:function(data){
 			beerApp.data = data.result;
@@ -133,21 +135,37 @@ beerApp.sortBeer = function(placeholder){
 
 beerApp.events = function(){
 
-	// $('#beers').on('change',function(){
-	// 	beerApp.beer = $(this).val();
-	// 	beerApp.getInfo(beerApp.beer);
-	// });
+		$('#beers').on('change',function(){
+			var beer = $(this).val();
+			beerApp.getInfo(beer);
+			beerApp.sortBeer(beer);
+		});
 
-	$('a').on('click', function(){
-		tertiary = $(this).attr('id');
-		console.log(tertiary);
-		secondary = $(this).attr('class');
-		console.log(secondary);
-		beerApp.getInfo(secondary,tertiary);
+		// Apply a submit event listener to the form
+		// With a class of search
+		$('.search').on('submit', function(e){
+			e.preventDefault();
+			// get the entered user input
+			var searchQuery = $(this).find('input[type=search]').val();
+			console.log(searchQuery);
+			// pass that value to the app.getArt() method
+			beerApp.getInfo(searchQuery);
+			// clear search value
+			$(this).find('input[type=search]').val('');
+		});
+	};
 
-	});
 	
-};
+// 	$('a').on('click', function(){
+// 		tertiary = $(this).attr('id');
+// 		console.log(tertiary);
+// 		secondary = $(this).attr('class');
+// 		console.log(secondary);
+// 		beerApp.getInfo(secondary,tertiary);
+
+// 	});
+	
+// };
 
 // use 
 
