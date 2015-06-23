@@ -74,7 +74,7 @@ p{
 	  	}
 	}
 	p{
-		font-size: 25px;
+		font-size: 20px;
 		text-align: center;
 		margin: 0;
 			@media screen and (max-width:460px){
@@ -215,4 +215,40 @@ hr{
 		font-size: 15px;
 		margin: 0;
 	}
+}
+.ale-selector{
+	background-color: #FBAF3C;
+	padding: 9px;
+	margin-bottom: 10px;
+}
+.beerContainer{
+	background-color: white;
+	max-width: 350px;
+	margin: 0 auto;
+	padding: 20px;
+	margin-top:20px;
+	h3{
+		font-size: 18px;
+	}
+}
+
+select{
+	width: 100%;
+	background-color: #FBAF3C;
+	border: 1px;
+	font-size:20px;
+	color: #000000;
+
+}
+input[type="search"]{
+	width: 100%;
+	background-color: #FBAF3C;
+	padding: 9px;
+	margin-bottom: 10px;
+	border: none;
+	font-size: 20px;
+}
+::-webkit-input-placeholder {
+   color: black;
+   // font-size: 20px;
 }

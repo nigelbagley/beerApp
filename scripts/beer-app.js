@@ -135,7 +135,8 @@ beerApp.sortBeer = function(placeholder){
 
 beerApp.events = function(){
 
-		$('#beers').on('change',function(){
+		$('#beers').on('change',function(e){
+			e.preventDefault();
 			var beer = $(this).val();
 			beerApp.getInfo(beer);
 			beerApp.sortBeer(beer);
